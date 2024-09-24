@@ -8,6 +8,8 @@ export interface Champion {
 
 export interface Job {
   name: string;
-  type: string;
+  type: JobType;
   id: string;
 }
+
+export type JobType = "classes" | "origins";

@@ -13,7 +13,6 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // 为了在项目中使用绝对导入，我们需要为 src 目录创建一个别名
       "@": resolve(__dirname, "src"),
     },
   },
