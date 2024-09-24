@@ -1,0 +1,137 @@
+[
+  {
+    "name": "命运之子",
+    "type": "origins",
+    "id": "10087"
+  },
+  {
+    "name": "飞升者",
+    "type": "origins",
+    "id": "10088"
+  },
+  {
+    "name": "蝙蝠女王",
+    "type": "origins",
+    "id": "10089"
+  },
+  {
+    "name": "龙族",
+    "type": "origins",
+    "id": "10090"
+  },
+  {
+    "name": "德鲁伊",
+    "type": "origins",
+    "id": "10091"
+  },
+  {
+    "name": "魔神使者",
+    "type": "origins",
+    "id": "10092"
+  },
+  {
+    "name": "最佳好友",
+    "type": "origins",
+    "id": "10093"
+  },
+  {
+    "name": "花仙子",
+    "type": "origins",
+    "id": "10094"
+  },
+  {
+    "name": "冰霜",
+    "type": "origins",
+    "id": "10095"
+  },
+  {
+    "name": "小蜜蜂",
+    "type": "origins",
+    "id": "10096"
+  },
+  {
+    "name": "次元术士",
+    "type": "origins",
+    "id": "10097"
+  },
+  {
+    "name": "炎魔",
+    "type": "origins",
+    "id": "10098"
+  },
+  {
+    "name": "狂厄蔷薇",
+    "type": "origins",
+    "id": "10099"
+  },
+  {
+    "name": "咖啡甜心",
+    "type": "origins",
+    "id": "10101"
+  },
+  {
+    "name": "诅咒女巫",
+    "type": "origins",
+    "id": "10102"
+  },
+  {
+    "name": "堡垒卫士",
+    "type": "classes",
+    "id": "10103"
+  },
+  {
+    "name": "强袭枪手",
+    "type": "classes",
+    "id": "10104"
+  },
+  {
+    "name": "时间学派",
+    "type": "origins",
+    "id": "10105"
+  },
+  {
+    "name": "猎手",
+    "type": "classes",
+    "id": "10106"
+  },
+  {
+    "name": "术师",
+    "type": "classes",
+    "id": "10107"
+  },
+  {
+    "name": "法师",
+    "type": "classes",
+    "id": "10108"
+  },
+  {
+    "name": "魔战士",
+    "type": "classes",
+    "id": "10109"
+  },
+  {
+    "name": "复苏者",
+    "type": "classes",
+    "id": "10110"
+  },
+  {
+    "name": "学者",
+    "type": "classes",
+    "id": "10111"
+  },
+  {
+    "name": "换形师",
+    "type": "classes",
+    "id": "10112"
+  },
+  {
+    "name": "重装战士",
+    "type": "classes",
+    "id": "10113"
+  },
+  {
+    "name": "狂暴战士",
+    "type": "classes",
+    "id": "10114"
+  }
+]

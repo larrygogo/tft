@@ -1,0 +1,1127 @@
+[
+  {
+    "name": "瘟疫之源",
+    "title": "图奇",
+    "price": "1",
+    "id": "10130",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "猎手",
+        "type": "classes",
+        "id": "10106"
+      }
+    ]
+  },
+  {
+    "name": "祖安怒兽",
+    "title": "沃里克",
+    "price": "1",
+    "id": "10131",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "重装战士",
+        "type": "classes",
+        "id": "10113"
+      }
+    ]
+  },
+  {
+    "name": "武器大师",
+    "title": "贾克斯",
+    "price": "1",
+    "id": "10134",
+    "jobs": [
+      {
+        "name": "时间学派",
+        "type": "origins",
+        "id": "10105"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "蒸汽机器人",
+    "title": "布里茨",
+    "price": "1",
+    "id": "10139",
+    "jobs": [
+      {
+        "name": "小蜜蜂",
+        "type": "origins",
+        "id": "10096"
+      },
+      {
+        "name": "重装战士",
+        "type": "classes",
+        "id": "10113"
+      }
+    ]
+  },
+  {
+    "name": "蜘蛛女皇",
+    "title": "伊莉丝",
+    "price": "1",
+    "id": "10140",
+    "jobs": [
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "未来守护者",
+    "title": "杰斯",
+    "price": "1",
+    "id": "10141",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "寒冰射手",
+    "title": "艾希",
+    "price": "1",
+    "id": "10143",
+    "jobs": [
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "暮光星灵",
+    "title": "佐伊",
+    "price": "1",
+    "id": "10144",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "诅咒女巫",
+        "type": "origins",
+        "id": "10102"
+      },
+      {
+        "name": "学者",
+        "type": "classes",
+        "id": "10111"
+      }
+    ]
+  },
+  {
+    "name": "含羞蓓蕾",
+    "title": "莉莉娅",
+    "price": "1",
+    "id": "10158",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      }
+    ]
+  },
+  {
+    "name": "诺姆希",
+    "title": "诺姆希",
+    "price": "1",
+    "id": "10172",
+    "jobs": [
+      {
+        "name": "龙族",
+        "type": "origins",
+        "id": "10090"
+      },
+      {
+        "name": "猎手",
+        "type": "classes",
+        "id": "10106"
+      }
+    ]
+  },
+  {
+    "name": "圣锤之毅",
+    "title": "波比",
+    "price": "1",
+    "id": "10187",
+    "jobs": [
+      {
+        "name": "诅咒女巫",
+        "type": "origins",
+        "id": "10102"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      }
+    ]
+  },
+  {
+    "name": "爆破鬼才",
+    "title": "吉格斯",
+    "price": "1",
+    "id": "10189",
+    "jobs": [
+      {
+        "name": "小蜜蜂",
+        "type": "origins",
+        "id": "10096"
+      },
+      {
+        "name": "术师",
+        "type": "classes",
+        "id": "10107"
+      }
+    ]
+  },
+  {
+    "name": "众星之子",
+    "title": "索拉卡",
+    "price": "1",
+    "id": "10192",
+    "jobs": [
+      {
+        "name": "咖啡甜心",
+        "type": "origins",
+        "id": "10101"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  },
+  {
+    "name": "星籁歌姬",
+    "title": "萨勒芬妮",
+    "price": "1",
+    "id": "10196",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  },
+  {
+    "name": "时光守护者",
+    "title": "基兰",
+    "price": "2",
+    "id": "10129",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "时间学派",
+        "type": "origins",
+        "id": "10105"
+      },
+      {
+        "name": "复苏者",
+        "type": "classes",
+        "id": "10110"
+      }
+    ]
+  },
+  {
+    "name": "麦林炮手",
+    "title": "崔丝塔娜",
+    "price": "2",
+    "id": "10142",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "强袭枪手",
+        "type": "classes",
+        "id": "10104"
+      }
+    ]
+  },
+  {
+    "name": "不羁之悦",
+    "title": "尼菈",
+    "price": "2",
+    "id": "10145",
+    "jobs": [
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "狂暴战士",
+        "type": "classes",
+        "id": "10114"
+      }
+    ]
+  },
+  {
+    "name": "虚空行者",
+    "title": "卡萨丁",
+    "price": "2",
+    "id": "10146",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "深渊巨口",
+    "title": "克格莫",
+    "price": "2",
+    "id": "10147",
+    "jobs": [
+      {
+        "name": "小蜜蜂",
+        "type": "origins",
+        "id": "10096"
+      },
+      {
+        "name": "猎手",
+        "type": "classes",
+        "id": "10106"
+      }
+    ]
+  },
+  {
+    "name": "魔蛇之拥",
+    "title": "卡西奥佩娅",
+    "price": "2",
+    "id": "10148",
+    "jobs": [
+      {
+        "name": "诅咒女巫",
+        "type": "origins",
+        "id": "10102"
+      },
+      {
+        "name": "术师",
+        "type": "classes",
+        "id": "10107"
+      }
+    ]
+  },
+  {
+    "name": "暗黑元首",
+    "title": "辛德拉",
+    "price": "2",
+    "id": "10149",
+    "jobs": [
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "术师",
+        "type": "classes",
+        "id": "10107"
+      }
+    ]
+  },
+  {
+    "name": "雪原双子",
+    "title": "努努",
+    "price": "2",
+    "id": "10150",
+    "jobs": [
+      {
+        "name": "小蜜蜂",
+        "type": "origins",
+        "id": "10096"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      }
+    ]
+  },
+  {
+    "name": "离群之刺",
+    "title": "阿卡丽",
+    "price": "2",
+    "id": "10175",
+    "jobs": [
+      {
+        "name": "炎魔",
+        "type": "origins",
+        "id": "10098"
+      },
+      {
+        "name": "狂暴战士",
+        "type": "classes",
+        "id": "10114"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "正义巨像",
+    "title": "加里奥",
+    "price": "2",
+    "id": "10178",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "重装战士",
+        "type": "classes",
+        "id": "10113"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  },
+  {
+    "name": "龙血武姬",
+    "title": "希瓦娜",
+    "price": "2",
+    "id": "10186",
+    "jobs": [
+      {
+        "name": "龙族",
+        "type": "origins",
+        "id": "10090"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "机械公敌",
+    "title": "兰博",
+    "price": "2",
+    "id": "10188",
+    "jobs": [
+      {
+        "name": "咖啡甜心",
+        "type": "origins",
+        "id": "10101"
+      },
+      {
+        "name": "重装战士",
+        "type": "classes",
+        "id": "10113"
+      },
+      {
+        "name": "强袭枪手",
+        "type": "classes",
+        "id": "10104"
+      }
+    ]
+  },
+  {
+    "name": "九尾妖狐",
+    "title": "阿狸",
+    "price": "2",
+    "id": "10191",
+    "jobs": [
+      {
+        "name": "命运之子",
+        "type": "origins",
+        "id": "10087"
+      },
+      {
+        "name": "学者",
+        "type": "classes",
+        "id": "10111"
+      }
+    ]
+  },
+  {
+    "name": "异画师",
+    "title": "彗",
+    "price": "3",
+    "id": "10132",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "强袭枪手",
+        "type": "classes",
+        "id": "10104"
+      }
+    ]
+  },
+  {
+    "name": "愁云使者",
+    "title": "薇古丝",
+    "price": "3",
+    "id": "10135",
+    "jobs": [
+      {
+        "name": "时间学派",
+        "type": "origins",
+        "id": "10105"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  },
+  {
+    "name": "不祥之刃",
+    "title": "卡特琳娜",
+    "price": "3",
+    "id": "10151",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "狂暴战士",
+        "type": "classes",
+        "id": "10114"
+      }
+    ]
+  },
+  {
+    "name": "战争之影",
+    "title": "赫卡里姆",
+    "price": "3",
+    "id": "10152",
+    "jobs": [
+      {
+        "name": "命运之子",
+        "type": "origins",
+        "id": "10087"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "万花通灵",
+    "title": "妮蔻",
+    "price": "3",
+    "id": "10153",
+    "jobs": [
+      {
+        "name": "诅咒女巫",
+        "type": "origins",
+        "id": "10102"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "探险家",
+    "title": "伊泽瑞尔",
+    "price": "3",
+    "id": "10154",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "强袭枪手",
+        "type": "classes",
+        "id": "10104"
+      }
+    ]
+  },
+  {
+    "name": "暴走萝莉",
+    "title": "金克丝",
+    "price": "3",
+    "id": "10155",
+    "jobs": [
+      {
+        "name": "咖啡甜心",
+        "type": "origins",
+        "id": "10101"
+      },
+      {
+        "name": "猎手",
+        "type": "classes",
+        "id": "10106"
+      }
+    ]
+  },
+  {
+    "name": "邪恶小法师",
+    "title": "维迦",
+    "price": "3",
+    "id": "10156",
+    "jobs": [
+      {
+        "name": "小蜜蜂",
+        "type": "origins",
+        "id": "10096"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  },
+  {
+    "name": "星界游神",
+    "title": "巴德",
+    "price": "3",
+    "id": "10157",
+    "jobs": [
+      {
+        "name": "咖啡甜心",
+        "type": "origins",
+        "id": "10101"
+      },
+      {
+        "name": "复苏者",
+        "type": "classes",
+        "id": "10110"
+      },
+      {
+        "name": "学者",
+        "type": "classes",
+        "id": "10111"
+      }
+    ]
+  },
+  {
+    "name": "铁铠冥魂",
+    "title": "莫德凯撒",
+    "price": "3",
+    "id": "10159",
+    "jobs": [
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "重装战士",
+        "type": "classes",
+        "id": "10113"
+      }
+    ]
+  },
+  {
+    "name": "暮光之眼",
+    "title": "慎",
+    "price": "3",
+    "id": "10185",
+    "jobs": [
+      {
+        "name": "炎魔",
+        "type": "origins",
+        "id": "10098"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      }
+    ]
+  },
+  {
+    "name": "诺克萨斯统领",
+    "title": "斯维因",
+    "price": "3",
+    "id": "10190",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "齐天大圣",
+    "title": "孙悟空",
+    "price": "3",
+    "id": "10201",
+    "jobs": [
+      {
+        "name": "德鲁伊",
+        "type": "origins",
+        "id": "10091"
+      }
+    ]
+  },
+  {
+    "name": "天启者",
+    "title": "卡尔玛",
+    "price": "4",
+    "id": "10137",
+    "jobs": [
+      {
+        "name": "时间学派",
+        "type": "origins",
+        "id": "10105"
+      },
+      {
+        "name": "术师",
+        "type": "classes",
+        "id": "10107"
+      }
+    ]
+  },
+  {
+    "name": "无双剑姬",
+    "title": "菲奥娜",
+    "price": "4",
+    "id": "10160",
+    "jobs": [
+      {
+        "name": "诅咒女巫",
+        "type": "origins",
+        "id": "10102"
+      },
+      {
+        "name": "狂暴战士",
+        "type": "classes",
+        "id": "10114"
+      }
+    ]
+  },
+  {
+    "name": "灵罗娃娃",
+    "title": "格温",
+    "price": "4",
+    "id": "10161",
+    "jobs": [
+      {
+        "name": "咖啡甜心",
+        "type": "origins",
+        "id": "10101"
+      },
+      {
+        "name": "狂暴战士",
+        "type": "classes",
+        "id": "10114"
+      }
+    ]
+  },
+  {
+    "name": "幻翎",
+    "title": "洛",
+    "price": "4",
+    "id": "10162",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "复苏者",
+        "type": "classes",
+        "id": "10110"
+      }
+    ]
+  },
+  {
+    "name": "河流之王",
+    "title": "塔姆",
+    "price": "4",
+    "id": "10163",
+    "jobs": [
+      {
+        "name": "命运之子",
+        "type": "origins",
+        "id": "10087"
+      },
+      {
+        "name": "重装战士",
+        "type": "classes",
+        "id": "10113"
+      }
+    ]
+  },
+  {
+    "name": "复仇之矛",
+    "title": "卡莉丝塔",
+    "price": "4",
+    "id": "10164",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "符文法师",
+    "title": "瑞兹",
+    "price": "4",
+    "id": "10165",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "学者",
+        "type": "classes",
+        "id": "10111"
+      }
+    ]
+  },
+  {
+    "name": "唤潮鲛姬",
+    "title": "娜美",
+    "price": "4",
+    "id": "10166",
+    "jobs": [
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  },
+  {
+    "name": "惩戒之箭",
+    "title": "韦鲁斯",
+    "price": "4",
+    "id": "10173",
+    "jobs": [
+      {
+        "name": "炎魔",
+        "type": "origins",
+        "id": "10098"
+      },
+      {
+        "name": "强袭枪手",
+        "type": "classes",
+        "id": "10104"
+      }
+    ]
+  },
+  {
+    "name": "沙漠死神",
+    "title": "内瑟斯",
+    "price": "4",
+    "id": "10174",
+    "jobs": [
+      {
+        "name": "炎魔",
+        "type": "origins",
+        "id": "10098"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "瓦洛兰之盾",
+    "title": "塔里克",
+    "price": "4",
+    "id": "10176",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      }
+    ]
+  },
+  {
+    "name": "狂战士",
+    "title": "奥拉夫",
+    "price": "4",
+    "id": "10197",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "猎手",
+        "type": "classes",
+        "id": "10106"
+      }
+    ]
+  },
+  {
+    "name": "皎月女神",
+    "title": "黛安娜",
+    "price": "5",
+    "id": "10133",
+    "jobs": [
+      {
+        "name": "冰霜",
+        "type": "origins",
+        "id": "10095"
+      },
+      {
+        "name": "堡垒卫士",
+        "type": "classes",
+        "id": "10103"
+      }
+    ]
+  },
+  {
+    "name": "炽炎雏龙",
+    "title": "斯莫德",
+    "price": "5",
+    "id": "10136",
+    "jobs": [
+      {
+        "name": "龙族",
+        "type": "origins",
+        "id": "10090"
+      },
+      {
+        "name": "强袭枪手",
+        "type": "classes",
+        "id": "10104"
+      }
+    ]
+  },
+  {
+    "name": "青钢影",
+    "title": "卡蜜尔",
+    "price": "5",
+    "id": "10138",
+    "jobs": [
+      {
+        "name": "时间学派",
+        "type": "origins",
+        "id": "10105"
+      },
+      {
+        "name": "魔战士",
+        "type": "classes",
+        "id": "10109"
+      }
+    ]
+  },
+  {
+    "name": "狂厄蔷薇",
+    "title": "贝蕾亚",
+    "price": "5",
+    "id": "10167",
+    "jobs": [
+      {
+        "name": "狂厄蔷薇",
+        "type": "origins",
+        "id": "10099"
+      },
+      {
+        "name": "魔神使者",
+        "type": "origins",
+        "id": "10092"
+      },
+      {
+        "name": "换形师",
+        "type": "classes",
+        "id": "10112"
+      }
+    ]
+  },
+  {
+    "name": "堕落天使",
+    "title": "莫甘娜",
+    "price": "5",
+    "id": "10168",
+    "jobs": [
+      {
+        "name": "诅咒女巫",
+        "type": "origins",
+        "id": "10102"
+      },
+      {
+        "name": "蝙蝠女王",
+        "type": "origins",
+        "id": "10089"
+      },
+      {
+        "name": "复苏者",
+        "type": "classes",
+        "id": "10110"
+      }
+    ]
+  },
+  {
+    "name": "远古巫灵",
+    "title": "泽拉斯",
+    "price": "5",
+    "id": "10169",
+    "jobs": [
+      {
+        "name": "命运之子",
+        "type": "origins",
+        "id": "10087"
+      },
+      {
+        "name": "飞升者",
+        "type": "origins",
+        "id": "10088"
+      }
+    ]
+  },
+  {
+    "name": "明烛",
+    "title": "米利欧",
+    "price": "5",
+    "id": "10170",
+    "jobs": [
+      {
+        "name": "花仙子",
+        "type": "origins",
+        "id": "10094"
+      },
+      {
+        "name": "学者",
+        "type": "classes",
+        "id": "10111"
+      }
+    ]
+  },
+  {
+    "name": "诺拉与悠米",
+    "title": "诺拉与悠米",
+    "price": "5",
+    "id": "10171",
+    "jobs": [
+      {
+        "name": "次元术士",
+        "type": "origins",
+        "id": "10097"
+      },
+      {
+        "name": "最佳好友",
+        "type": "origins",
+        "id": "10093"
+      },
+      {
+        "name": "法师",
+        "type": "classes",
+        "id": "10108"
+      }
+    ]
+  }
+]
