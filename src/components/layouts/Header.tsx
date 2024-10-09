@@ -1,6 +1,7 @@
 import Champion from "@/components/icons/champion.svg?react";
 import Synergy from "@/components/icons/synergy.svg?react";
 import { cn } from "@/libs/utils";
+import { Calculator } from "lucide-react";
 import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 const navs = [
@@ -16,6 +17,12 @@ const navs = [
     icon: <Synergy />,
     url: "/synergy",
   },
+  {
+    Key: "calculator",
+    title: "计算器",
+    icon: <Calculator size={18} />,
+    url: "/calculator",
+  },
 ];
 
 const Header = () => {
@@ -26,7 +33,10 @@ const Header = () => {
 
   return (
     <header className="bg-[#201f59] sticky top-0 z-50">
-      <div className="mx-auto container py-2 ">
+      <div className="mx-auto container py-2 flex">
+        <Link className="mr-8" to="/">
+          <h1 className="text-xl text-white">TFT Tools</h1>
+        </Link>
         <div className="flex divide-x divide-slate-500">
           {navs.map((nav) => (
             <Link

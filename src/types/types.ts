@@ -3,7 +3,7 @@ export interface Champion {
   title: string;
   price: string;
   id: string;
-  jobs: Job[];
+  jobs: string[]
 }
 
 export interface Job {

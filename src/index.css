@@ -4,6 +4,12 @@
 
 @layer base {
   :root {
+    --cost1: #999;
+    --cost2: #5fcc29;
+    --cost3: #297acc;
+    --cost4: #cc29cc;
+    --cost5: #cc2929;
+
     --background: 246 84% 10%;
     --foreground: 248 22% 72%;
     --card: 0 0% 100%;
@@ -31,6 +37,12 @@
     --radius: 0.5rem;
   }
   .dark {
+    --cost1: #999;
+    --cost2: #5fcc29;
+    --cost3: #297acc;
+    --cost4: #cc29cc;
+    --cost5: #cc2929;
+
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;

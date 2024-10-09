@@ -50,6 +50,13 @@ module.exports = {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+        cost: {
+          1: "var(--cost1)",
+          2: "var(--cost2)",
+          3: "var(--cost3)",
+          4: "var(--cost4)",
+          5: "var(--cost5)",
+        },
       },
     },
     corePlugins: {
