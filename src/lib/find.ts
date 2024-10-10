@@ -131,6 +131,29 @@ export function getJobCount(
   }));
 }
 
+export function getJobCount2(
+  combination: Champion[] // 当前的组合
+) {
+  const jobCount: Map<string, { id: string; count: number }> = new Map();
+  const combinationJobs = combination.map((champion) => champion.jobs).flat();
+
+  for (const job of combinationJobs) {
+      if (noCountJobs.includes(job)) continue;
+
+    if (jobCount.has(job)) {
+      jobCount.get(job)!.count += 1;
+    } else {
+      jobCount.set(job, { count: 1, id: job });
+    }
+    
+  }
+  return Array.from(jobCount.entries()).map(([id, value]) => ({
+    id,
+    name: jobs.get(id)!.name,
+    count: value.count,
+  }));
+}
+
 // 计算组合中每个职业的激活状态
 export function getActiveJobs(
   combination: string[], // 当前的组合

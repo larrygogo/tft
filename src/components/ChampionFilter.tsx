@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import jobs from "@/data/jobs.json";
 import { useDebounce } from "ahooks";
+import JobSelect from "./JobSelect";
 
 const ChampionFilter = ({
   champions,
@@ -48,14 +49,26 @@ const ChampionFilter = ({
     }
 
     if (debouncedFilterName) {
-      result = result.filter((champion) =>
-        champion.name.toLowerCase().includes(debouncedFilterName.toLowerCase()) ||
-        champion.title.toLowerCase().includes(debouncedFilterName.toLowerCase())
+      result = result.filter(
+        (champion) =>
+          champion.name
+            .toLowerCase()
+            .includes(debouncedFilterName.toLowerCase()) ||
+          champion.title
+            .toLowerCase()
+            .includes(debouncedFilterName.toLowerCase())
       );
     }
 
     setFilteredChampions(result);
-  }, [champions, currentClasses, currentCosts, currentOrigins, debouncedFilterName, setFilteredChampions]);
+  }, [
+    champions,
+    currentClasses,
+    currentCosts,
+    currentOrigins,
+    debouncedFilterName,
+    setFilteredChampions,
+  ]);
 
   return (
     <div className="grid grid-cols-12 gap-y-2 w-full">
@@ -89,50 +102,22 @@ const ChampionFilter = ({
         </Select>
       </div>
       <div className="col-span-4 -ml-[0.1]">
-        <Select value={currentOrigins} onValueChange={setCurrentOrigins}>
-          <SelectTrigger className="w-full focus:ring-0 hover:border-yellow-500 hover:z-[2]">
-            {currentOrigins === "all" ? (
-              <SelectValue>特质</SelectValue>
-            ) : (
-              <SelectValue>
-                {originsJobs.find((job) => job.id === currentOrigins)?.name}
-              </SelectValue>
-            )}
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="all">全部</SelectItem>
-              {originsJobs.map((job) => (
-                <SelectItem key={job.id} value={job.id}>
-                  {job.name}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        <JobSelect
+          scope="origins"
+          placeholder="特质"
+          value={currentOrigins}
+          onValueChange={setCurrentOrigins}
+          showAll
+        />
       </div>
       <div className="col-span-4 -ml-[0.4]">
-        <Select value={currentClasses} onValueChange={setCurrentClasses}>
-          <SelectTrigger className="w-full focus:ring-0 hover:border-yellow-500 hover:z-[2]">
-            {currentClasses === "all" ? (
-              <SelectValue>职业</SelectValue>
-            ) : (
-              <SelectValue>
-                {classesJobs.find((job) => job.id === currentClasses)?.name}
-              </SelectValue>
-            )}
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectItem value="all">全部</SelectItem>
-              {classesJobs.map((job) => (
-                <SelectItem key={job.id} value={job.id}>
-                  {job.name}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        <JobSelect
+          scope="classes"
+          placeholder="职业"
+          value={currentClasses}
+          onValueChange={setCurrentClasses}
+          showAll
+        />
       </div>
     </div>
   );
