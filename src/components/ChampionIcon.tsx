@@ -41,10 +41,10 @@ const ChampionIcon = (props: ChampionIconProps) => {
         }}
       />
       {showJob && championJobs.length > 0 && (
-        <div className="flex gap-[2px] absolute -top-3 left-0 right-0 p-1 text-white text-center text-xs truncate w-full z-50">
+        <div className="flex gap-[1px] justify-center absolute -top-2 left-0 right-0  text-white text-center text-xs truncate w-full z-50">
           {championJobs.map((job) => (
-            <div key={job!.id} className="rounded-full size-[12px] bg-slate-300 flex items-center justify-center">
-              <img src={`/images/job/${job!.id}.png`} className="size-[10px] filter drop-shadow" />
+            <div key={job!.id} className="rounded-full size-[14px] bg-slate-300 flex items-center justify-center">
+              <img src={`/images/job/${job!.id}.png`} className="size-[12px] filter drop-shadow" />
             </div>
           ))}
         </div>
