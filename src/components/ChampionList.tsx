@@ -1,6 +1,5 @@
 import { Champion } from "@/types/types";
 import ChampionIcon from "@/components/ChampionIcon";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
  
 interface ChampionListProps extends React.HTMLAttributes<HTMLDivElement> {

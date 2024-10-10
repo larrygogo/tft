@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { Champion } from "@/types/types";
 import jobsJson from "@/data/jobs.json";
 import { Job } from "@/lib/find";
+import JobIcon from "./JobIcon";
 
 const jobs: Job[] = jobsJson;
 
@@ -43,9 +44,7 @@ const ChampionIcon = (props: ChampionIconProps) => {
       {showJob && championJobs.length > 0 && (
         <div className="flex gap-[1px] justify-center absolute -top-2 left-0 right-0  text-white text-center text-xs truncate w-full z-50">
           {championJobs.map((job) => (
-            <div key={job!.id} className="rounded-full size-[14px] bg-slate-300 flex items-center justify-center">
-              <img src={`/images/job/${job!.id}.png`} className="size-[12px] filter drop-shadow" />
-            </div>
+            <JobIcon key={job!.id} jobId={job!.id} />
           ))}
         </div>
       )}
