@@ -4,7 +4,7 @@ export interface Champion {
   price: string;
   id: string;
   jobs: string[];
-  special: boolean;
+  special: string;
 }
 
 export interface Job {

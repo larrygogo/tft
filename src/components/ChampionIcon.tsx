@@ -9,13 +9,13 @@ interface ChampionIconProps extends React.HTMLAttributes<HTMLDivElement> {
   champion: Champion;
   isSelect?: boolean;
   showName?: boolean;
-  coverId?: string;
+  showJob?: boolean;
 }
 
 const ChampionIcon = (props: ChampionIconProps) => {
-  const { champion, isSelect, showName, className, coverId, ...rest } = props;
+  const { champion, isSelect, showName, showJob, className, ...rest } = props;
 
-  const cover = coverId ? coverId : champion.id;
+  const cover = getCover(champion);
 
   // 获取 job
   const championJobs = champion.jobs.map((job) => jobs.find((j) => j.id === job));
@@ -37,9 +37,18 @@ const ChampionIcon = (props: ChampionIconProps) => {
       <div
         className={cn("bg-cover cursor-pointer w-full h-full")}
         style={{
-          backgroundImage: `url(/images/small/${cover}.png)`,
+          backgroundImage: `url(${cover})`,
         }}
       />
+      {showJob && championJobs.length > 0 && (
+        <div className="flex gap-[2px] absolute -top-3 left-0 right-0 p-1 text-white text-center text-xs truncate w-full z-50">
+          {championJobs.map((job) => (
+            <div key={job!.id} className="rounded-full size-[12px] bg-slate-300 flex items-center justify-center">
+              <img src={`/images/job/${job!.id}.png`} className="size-[10px] filter drop-shadow" />
+            </div>
+          ))}
+        </div>
+      )}
       {!showName && (
         <div
           className={cn(
@@ -53,7 +62,8 @@ const ChampionIcon = (props: ChampionIconProps) => {
           <div
             className={cn(
               "absolute inset-0 top-0 h-full bg-gradient-to-b from-black to-black opacity-50",
-              isSelect && "bg-gradient-to-b from-transparent from-50% to-black  opacity-80"
+              isSelect &&
+                "bg-gradient-to-b from-transparent from-50% to-black  opacity-80"
             )}
           />
           <div
@@ -71,3 +81,15 @@ const ChampionIcon = (props: ChampionIconProps) => {
 };
 
 export default ChampionIcon;
+
+
+function getCover(champion: Champion) {
+  switch(champion.special) {
+    case "target":
+      return `/images/small/80001.png`
+    case "golem":
+      return `/images/small/90001.png`
+    default:
+      return `/images/small/${champion.id}.png`
+  }
+}

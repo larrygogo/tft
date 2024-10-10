@@ -7,12 +7,12 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import ChampionIcon from "@/components/ChampionIcon";
 import special from "@/data/special.json";
+import { nanoid } from "nanoid";
 
 const target = special.find((s) => s.id === "80001");
 const golem = special.find((s) => s.id === "90001");
 
 const SimulatorPage = () => {
-  const [value, setValue] = useState(0);
   const [showName, setShowName] = useState(true);
   const [selectedChampion, setSelectedChampion] = useState<Champion[]>([]);
   const [filteredChampions, setFilteredChampions] = useState<Champion[]>(champions as Champion[]);
@@ -53,10 +53,24 @@ const SimulatorPage = () => {
               <button 
                 className="p-1 text-xs bg-purple-800 rounded"
                 onClick={() => {
-                  console.log(target);
-                  setSelectedChampion([...selectedChampion, target as Champion]);
+                  const newTarget = {
+                    ...target,
+                    id: nanoid(),
+                  } as Champion;
+                  setSelectedChampion([...selectedChampion, newTarget]);
                 }}>
                 目标假人
+              </button>
+              <button 
+                className="p-1 text-xs bg-purple-800 rounded"
+                onClick={() => {
+                  const newGolem = {
+                    ...golem,
+                    id: nanoid(),
+                  } as Champion;
+                  setSelectedChampion([...selectedChampion, newGolem]);
+                }}>
+                 雕纹魔像
               </button>
             </div>
             <div className="mt-2">
@@ -69,6 +83,7 @@ const SimulatorPage = () => {
                   key={champion.id}
                   champion={champion}
                   isSelect
+                  showJob
                   showName={showName}
                   onClick={() => {
                     setSelectedChampion(
