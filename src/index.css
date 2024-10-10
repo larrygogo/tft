@@ -8,11 +8,11 @@
     --cost2: #5fcc29;
     --cost3: #297acc;
     --cost4: #cc29cc;
-    --cost5: #cc2929;
+    --cost5: #ffc430e0;
 
-    --background: 246 84% 10%;
+    --background: 246 73% 16%;
     --foreground: 248 22% 72%;
-    --card: 0 0% 100%;
+    --card: 241 48% 24%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -41,7 +41,7 @@
     --cost2: #5fcc29;
     --cost3: #297acc;
     --cost4: #cc29cc;
-    --cost5: #cc2929;
+    --cost5: #ffc430e0;
 
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;

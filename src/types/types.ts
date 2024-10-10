@@ -3,7 +3,8 @@ export interface Champion {
   title: string;
   price: string;
   id: string;
-  jobs: string[]
+  jobs: string[];
+  special: boolean;
 }
 
 export interface Job {

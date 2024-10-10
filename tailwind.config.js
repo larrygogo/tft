@@ -1,9 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import plugin from "tailwindcss/plugin";
+import tailwindCssAnimate from "tailwindcss-animate";
+import tailwindcssAspectRatio from "@tailwindcss/aspect-ratio";
+
+export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -63,8 +72,18 @@ module.exports = {
       aspectRatio: "false",
     },
     plugins: [
-      require("tailwindcss-animate"),
-      require("@tailwindcss/aspect-ratio"),
+      tailwindCssAnimate,
+      tailwindcssAspectRatio,
+      plugin( ({ matchUtilities, theme }) =>{
+        matchUtilities(
+          {
+            'text-shadow': (value) => ({
+              textShadow: value,
+            }),
+          },
+          { values: theme('textShadow') }
+        )
+      }),
     ],
   },
 };

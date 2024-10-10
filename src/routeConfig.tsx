@@ -1,7 +1,6 @@
 import { type RouteObject, Navigate } from "react-router-dom";
 import { RouteConfigExtended } from "react-router-title";
-import Champions from "@/pages/champions";
-import SynergyPage from "@/pages/synergy";
+import SimulatorPage from "./pages/simulator";
 
 type RouteConfig = {
   title: string;
@@ -12,16 +11,11 @@ export const routes: RouteConfig[] = [
   {
     title: "",
     path: "/",
-    element: <Navigate to="/champions" />,
+    element: <Navigate to="/simulator" />,
   },
   {
-    title: "英雄",
-    path: "/champions",
-    element: <Champions />,
-  },
-  {
-    title: "羁绊",
-    path: "/synergy",
-    element: <SynergyPage />,
+    title: "计算器",
+    path: "/simulator",
+    element: <SimulatorPage />,
   },
 ];
