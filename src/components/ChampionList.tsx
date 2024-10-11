@@ -25,7 +25,7 @@ const ChampionList = (props: ChampionListProps) => {
   }
 
   return (
-    <div {...rest} className={cn("flex gap-4 flex-wrap", rest.className)}>
+    <div {...rest} className={cn("grid grid-cols-[repeat(auto-fill,minmax(54px,1fr))] gap-2")}>
       {champions.map((champion) => (
         <ChampionIcon
           className="size-[54px]"

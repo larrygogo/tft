@@ -60,10 +60,13 @@ const jobIcons: Record<string, React.FunctionComponent<React.SVGProps<SVGSVGElem
 
 interface JobIconProps extends React.SVGProps<SVGSVGElement> {
   jobId: string;
+  bgFill?: string;
+  iconFill?: string;
+  borderStroke?: string;
 }
 
 const JobIcon = (props: JobIconProps) => {
-  const {jobId, ...rest} = props;
+  const {jobId, bgFill = "#111", iconFill = "#fff", borderStroke = "#555", ...rest} = props;
 
   const Icon = jobIcons[jobId];
 
@@ -71,22 +74,22 @@ const JobIcon = (props: JobIconProps) => {
     <svg
       width="30"
       height="30"
-      className=" m-[-2px] aspect-square undefined w-[30px]"
+      className="m-[-2px] aspect-[1/1] w-[30px]"
       viewBox="-4 -2 36 36"
       {...rest}
     >
       <path
-        fill="#111"
+        fill={bgFill}
         d="M13.856406460551018 0L27.712812921102035 8L27.712812921102035 24L13.856406460551018 32L0 24L0 8Z"
       ></path>
       <path
-        transform="translate(2, 2.5)"
-        stroke="#555"
-        stroke-width="1.5"
+        transform="translate(2, 2)"
+        stroke={borderStroke}
+        strokeWidth="1.5"
         fill="transparent"
         d="M11.90784930203603 0L23.81569860407206 6.875L23.81569860407206 20.625L11.90784930203603 27.5L0 20.625L0 6.875Z"
       ></path>
-      {Icon && <Icon x={4.25} y={6.25} width={19.5} height={19.5} fill="#fff"/>}
+      {Icon && <Icon x={4.25} y={6.25} width={19.5} height={19.5} fill={iconFill} />}
     </svg>
   );
 };

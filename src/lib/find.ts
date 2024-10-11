@@ -1,44 +1,28 @@
 import championsJson from "@/data/champions.json" assert { type: 'json' } ;
 import jobsJson from "@/data/jobs.json" assert { type: 'json' } ;
+import specialJson from "@/data/special.json" assert { type: 'json' } ;
+import { Piece } from "@/types/types";
 
 const global = {
-  GAIN_LEVEL: 1.25
-}
-
-export type Job = {
-  id: string;
-  name: string;
-  type: string;
-  bonus: number[];
-  scope: number[];
-  strength: number[];
+  GAIN_LEVEL: 1.2,
 };
-
-export type Champion = {
-  id: string;
-  name: string;
-  title: string;
-  price: string;
-  jobs: string[];
-};
-
-export type WoodPile = {
-  jobs: string[];
-};
-
-export type Combination = (Champion & WoodPile)[];
-
 
 
 export const champions = new Map(
   championsJson.map((champion) => [champion.id, champion])
 );
 
-export const jobs = new Map((jobsJson as Job[]).map((job) => [job.id, job]));
+export const jobs = new Map(jobsJson.map((job) => [job.id, job]));
 
 export const championsJobMap = new Map<string, string[]>(
   championsJson.map((champion) => [champion.id, champion.jobs.map((job) => job)])
 );
+
+export const specialMap = new Map(
+  specialJson.map((item) => [item.id, item])
+);
+
+export const pieces = new Map([...champions, ...specialMap]);
 
 export const jobChampionMap = new Map<string, string[]>(
   jobsJson.map((job) => [job.id, championsJobMap.get(job.id)!])
@@ -51,7 +35,7 @@ export const jobBounsMap = new Map<string, number[]>(
 export const noCountJobs = jobsJson.map((job) => job.id).filter((jobId) => jobs.get(jobId)?.bonus.length === 1);
 
 // 英雄相同职业的map
-export const championSampJobMap:Map<string, string[]> = new Map();
+export const championSamepJobMap:Map<string, string[]> = new Map();
 
 function initChampionSampJobMap() {
   for (const [c1Id, c1Jobs] of championsJobMap) {
@@ -66,7 +50,7 @@ function initChampionSampJobMap() {
         })
       }
     }
-    championSampJobMap.set(c1Id, v.sort((a, b) => b.count - a.count).map((item) => item.id));
+    championSamepJobMap.set(c1Id, v.sort((a, b) => b.count - a.count).map((item) => item.id));
   }
 }
 
@@ -108,31 +92,8 @@ function combine<T>(arr: T[], n: number): T[][] {
 }
 
 
-// 计算组合中的职业数量
 export function getJobCount(
-  combination: string[] // 当前的组合
-) {
-  const jobCount: Map<string, { id: string; count: number }> = new Map();
-  const combinationJobs = combination.map((championId) => champions.get(championId)!.jobs).flat();
-
-  for (const job of combinationJobs) {
-      if (noCountJobs.includes(job)) continue;
-
-    if (jobCount.has(job)) {
-      jobCount.get(job)!.count += 1;
-    } else {
-      jobCount.set(job, { count: 1, id: job });
-    }
-    
-  }
-  return Array.from(jobCount.entries()).map(([id, value]) => ({
-    id,
-    count: value.count,
-  }));
-}
-
-export function getJobCount2(
-  combination: Champion[] // 当前的组合
+  combination: Piece[] // 当前的组合
 ) {
   const jobCount: Map<string, { id: string; count: number }> = new Map();
   const combinationJobs = combination.map((champion) => champion.jobs).flat();
@@ -156,8 +117,10 @@ export function getJobCount2(
 
 // 计算组合中每个职业的激活状态
 export function getActiveJobs(
-  combination: string[], // 当前的组合
+  combination: Piece[], // 当前的组合
 ) {
+
+
   // Step 1: 计算组合中的职业数量
   const jobCounts = new Map<string, number>(
     getJobCount(combination)?.map((job) => [job.id, job.count])
@@ -199,14 +162,13 @@ export function getActiveJobs(
  
   return Array.from(activeJobs.entries()).map(([id, level]) => ({
     id,
-    name: jobs.get(id)!.name,
     level,
     count: jobCounts.get(id) ?? 0,
   }));
 }
 
 export function getActiveJobCount(
-  combination: string[], // 当前的组合
+  combination: Piece[], // 当前的组合
   activeLevelCounts: boolean = false
 ) {
 
@@ -218,7 +180,7 @@ export function getActiveJobCount(
 
 // 找到组合中未被激活的职业
 export function getInactiveJobs(
-  combination: string[], // 当前的组合
+  combination: Piece[]
 ): string[] {
   const jobCount = getJobCount(combination);
   const activeJobCount = getActiveJobs(combination);
@@ -230,16 +192,16 @@ export function getInactiveJobs(
 
 // 判断英雄和组合是否存在相同且未激活的职业
 export function hasSameInactiveJob(
-  champion: string,
-  combination: string[],
+  champion: Piece,
+  combination: Piece[],
 ): boolean {
   const inactiveJobs = getInactiveJobs(combination);
-  return championsJobMap.get(champion)!.some((job) => inactiveJobs.includes(job));
+  return championsJobMap.get(champion.id)!.some((job) => inactiveJobs.includes(job));
 }
 
 // 找到满足必要职业条件的所有组合
 export function findAllRequiredCombinations(options: {
-  combination: string[]; // 初始组合
+  combination: Piece[];
   requiredJob: { id: string; count: number };
 }) {
   const { combination: initCombination, requiredJob } = options;
@@ -264,7 +226,7 @@ export function findAllRequiredCombinations(options: {
 
 // Evaluate 评估当前组合的羁绊数量、单位收益、羁绊总数、羁绊强度
 export function evaluateCombination(
-  combination: string[],
+  combination: Piece[],
 ) {
   const activeJobs = getActiveJobs(combination);
 
@@ -273,10 +235,9 @@ export function evaluateCombination(
 
   const unitsStrength = new Map<string, number>();
 
-  for (const championId of combination) {
-    const champion = champions.get(championId);
-    const unitStrength = Math.pow(global.GAIN_LEVEL, parseFloat(champion!.price) - 1);
-    unitsStrength.set(championId, unitStrength);
+  for (const piece of combination) {
+    const unitStrength = Math.pow(global.GAIN_LEVEL, parseFloat(piece!.price) - 1);
+    unitsStrength.set(piece.id, unitStrength);
   }
 
   const championTotalStrength = Array.from(unitsStrength.values()).reduce((acc, strength) => acc + strength, 0);
@@ -286,7 +247,7 @@ export function evaluateCombination(
   for (const activeJob of activeJobs) {
     const currentJob = jobs.get(activeJob.id);
     // 获取当前阵容中该职业的英雄
-    const jobChampions = combination.filter((championId) => championsJobMap.get(championId)!.includes(activeJob.id));
+    const jobChampions = combination.filter((piece) => piece.jobs.includes(activeJob.id));
     const jobStrength = currentJob!.strength[activeJob.level - 1];
     const jobScope = currentJob!.scope[activeJob.level - 1];
     switch (jobScope) {
@@ -300,13 +261,8 @@ export function evaluateCombination(
         jobStrengths.set(activeJob.id, jobStrength * combination.length);
         break;
     }
-
-
-
-    
-
-
   }
+
   const totalStrength = Array.from(unitsStrength.values()).reduce((acc, strength) => acc + strength, 0) + Array.from(jobStrengths.values()).reduce((acc, strength) => acc + strength, 0);
 
   return {
@@ -319,49 +275,45 @@ export function evaluateCombination(
       strength,
     })),
   };
-
-
 }
 
-
-const memo = new Map<string, number>();
-
-function evaluateCombinationMemoized(selected: Set<string>): number {
-  const key = [...selected].sort().join('-');
-  if (memo.has(key)) {
-    return memo.get(key)!;
-  }
-  const strength = evaluateCombination([...selected]); // Assume evaluateCombination is a function that calculates strength
-  memo.set(key, strength.totalStrength);
-  return strength.totalStrength;
-}
 
 
 export function findMoreActiveJobCombination(options: {
   count: number, 
-  combination: string[],
-  activeLevelCounts: boolean
+  combination: Piece[],
 }) {
   const { count, combination } = options;
-  let maxActiveJobCount = -Infinity;
+
+  // 当前组合中的英雄数量
+  const championCount = combination.filter((peice) => peice.type === 'champion').length;
+
+  if (championCount >= count) {
+    return combination;
+  }
+
+  let maxActiveJobCount = 0;
   let maxJobCombination: string[] = [];
 
   const stack: { node: string; selected: Set<string>; oldChildren: Set<string> }[] = [];
 
-  const initSelected = new Set(combination);
-  const sameChampionsArray = combination.map((champion) => championSampJobMap.get(champion)!).flat().filter((champion) => !initSelected.has(champion));
+  const initSelected = new Map(combination.map((piece) => [piece.id, piece]))
+  const sameChampionIds = combination.flatMap((piece) => {
+    if(piece.type === 'champion') {
+      return championSamepJobMap.get(piece.id)!.filter((champion) => !initSelected.has(champion))
+    }
+    const jobs = piece.jobs;
+    return jobs.map((job) => (jobChampionMap.get(job) ?? []).filter((champion) => !initSelected.has(champion))).flat();
+  })
 
-  const sameChampions = new Set(sameChampionsArray);
-
-  console.log([...sameChampions].map((championId) => getChampionDetail(championId)));
-
+  const sameChampions = new Set(sameChampionIds);
 
   // Push initial champions into the stack
   for (const champion of sameChampions) {
     stack.push({
       node: champion,
-      selected: initSelected,
-      oldChildren: new Set([...initSelected].filter((id) => id !== champion)),
+      selected: new Set(initSelected.keys()),
+      oldChildren: new Set([...initSelected.keys()].filter((id) => id !== champion)),
     });
   }
 
@@ -371,10 +323,19 @@ export function findMoreActiveJobCombination(options: {
     const newSelected = new Set(selected);
     newSelected.add(node);
 
-    const {totalStrength} = evaluateCombination([...newSelected]);
-    
+    const newSelectedPieces = Array.from(newSelected).map((id) => {
+      if (pieces.has(id)) {
+        return pieces.get(id)! as Piece;
+      }
+      return initSelected.get(id)!;
+    });
 
-    if (newSelected.size === count) {
+    const {totalStrength} = evaluateCombination(newSelectedPieces);
+
+    // pecie count
+    const championCount = Array.from(newSelected).filter((championId) => champions.has(championId)).length;
+
+    if (championCount === count) {
 
       // const currentStrength = evaluateCombinationMemoized(newSelected);
       if (totalStrength > maxActiveJobCount) {
@@ -384,7 +345,7 @@ export function findMoreActiveJobCombination(options: {
       continue;
     }
 
-    const newSameJobChampions = new Set(championSampJobMap.get(node));
+    const newSameJobChampions = new Set(championSamepJobMap.get(node));
     const newChildren = new Set([...oldChildren, ...newSameJobChampions]);
     newChildren.delete(node);
 
@@ -401,7 +362,7 @@ export function findMoreActiveJobCombination(options: {
     }
   }
 
-  return maxJobCombination;
+  return maxJobCombination.map((id) => pieces.get(id) ?? initSelected.get(id)!);
 }
 
 

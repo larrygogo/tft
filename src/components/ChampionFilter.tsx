@@ -1,4 +1,4 @@
-import { Champion } from "@/types/types";
+import { Piece } from "@/types/types";
 import { useEffect, useState } from "react";
 import {
   Select,
@@ -9,26 +9,28 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import jobs from "@/data/jobs.json";
 import { useDebounce } from "ahooks";
 import JobSelect from "./JobSelect";
 
 const ChampionFilter = ({
   champions,
   setFilteredChampions,
+  origins,
+  classes,
+  onOriginsChange,
+  onClassesChange,
 }: {
-  champions: Champion[];
-  setFilteredChampions: React.Dispatch<React.SetStateAction<Champion[]>>;
+  champions: Piece[];
+  setFilteredChampions: React.Dispatch<React.SetStateAction<Piece[]>>;
+  origins: string;
+  classes: string;
+  onOriginsChange: (value: string) => void;
+  onClassesChange: (value: string) => void;
 }) => {
   const [currentCosts, setCurrentCosts] = useState<string>("all");
-  const [currentClasses, setCurrentClasses] = useState<string>("all");
-  const [currentOrigins, setCurrentOrigins] = useState<string>("all");
   const [filterName, setFilterName] = useState<string>("");
 
   const debouncedFilterName = useDebounce(filterName, { wait: 500 });
-
-  const classesJobs = jobs.filter((job) => job.type === "classes");
-  const originsJobs = jobs.filter((job) => job.type === "origins");
 
   useEffect(() => {
     let result = champions;
@@ -36,15 +38,15 @@ const ChampionFilter = ({
       result = result.filter((champion) => champion.price === currentCosts);
     }
 
-    if (currentOrigins !== "all") {
+    if (origins !== "all") {
       result = result.filter((champion) =>
-        champion.jobs.some((job) => job === currentOrigins)
+        champion.jobs.some((job) => job === origins)
       );
     }
 
-    if (currentClasses !== "all") {
+    if (classes !== "all") {
       result = result.filter((champion) =>
-        champion.jobs.some((job) => job === currentClasses)
+        champion.jobs.some((job) => job === classes)
       );
     }
 
@@ -63,9 +65,9 @@ const ChampionFilter = ({
     setFilteredChampions(result);
   }, [
     champions,
-    currentClasses,
+    origins,
     currentCosts,
-    currentOrigins,
+    classes,
     debouncedFilterName,
     setFilteredChampions,
   ]);
@@ -105,8 +107,8 @@ const ChampionFilter = ({
         <JobSelect
           scope="origins"
           placeholder="特质"
-          value={currentOrigins}
-          onValueChange={setCurrentOrigins}
+          value={origins}
+          onValueChange={onOriginsChange}
           showAll
         />
       </div>
@@ -114,8 +116,8 @@ const ChampionFilter = ({
         <JobSelect
           scope="classes"
           placeholder="职业"
-          value={currentClasses}
-          onValueChange={setCurrentClasses}
+          value={classes}
+          onValueChange={onClassesChange}
           showAll
         />
       </div>

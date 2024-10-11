@@ -5,7 +5,7 @@
     "price": "1",
     "id": "80001",
     "jobs": [],
-    "special": "target"
+    "type": "target"
   },
   {
     "name": "雕纹魔像",
@@ -13,6 +13,6 @@
     "price": "1",
     "id": "90001",
     "jobs": [],
-    "special": "golem"
+    "type": "golem"
   }
 ]

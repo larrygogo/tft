@@ -1,13 +1,12 @@
 import { cn } from "@/lib/utils";
-import { Champion } from "@/types/types";
+import { Piece, Job } from "@/types/types";
 import jobsJson from "@/data/jobs.json";
-import { Job } from "@/lib/find";
 import JobIcon from "./JobIcon";
 
-const jobs: Job[] = jobsJson;
+const jobs: Job[] = jobsJson as Job[];
 
 interface ChampionIconProps extends React.HTMLAttributes<HTMLDivElement> {
-  champion: Champion;
+  champion: Piece;
   isSelect?: boolean;
   showName?: boolean;
   showJob?: boolean;
@@ -82,8 +81,8 @@ const ChampionIcon = (props: ChampionIconProps) => {
 export default ChampionIcon;
 
 
-function getCover(champion: Champion) {
-  switch(champion.special) {
+function getCover(champion: Piece) {
+  switch(champion.type) {
     case "target":
       return `/images/small/80001.png`
     case "golem":
