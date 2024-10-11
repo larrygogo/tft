@@ -1,12 +1,12 @@
-import { Champion } from "@/types/types";
+import { Piece } from "@/types/types";
 import ChampionIcon from "@/components/ChampionIcon";
 import { cn } from "@/lib/utils";
  
 interface ChampionListProps extends React.HTMLAttributes<HTMLDivElement> {
-  champions: Champion[];
+  champions: Piece[];
   showName?: boolean;
-  selected: Champion[];
-  onSelectedChange: (champion: Champion[]) => void;
+  selected: Piece[];
+  onSelectedChange: (champion: Piece[]) => void;
 }
 
 const ChampionList = (props: ChampionListProps) => {
@@ -14,7 +14,7 @@ const ChampionList = (props: ChampionListProps) => {
 
 
 
-  const handleSelect = (champion: Champion) => {
+  const handleSelect = (champion: Piece) => {
     const set = new Set(selected)
     if (set.has(champion)) {
       set.delete(champion)

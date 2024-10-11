@@ -1,7 +1,7 @@
 import championsJson from "@/data/champions.json" assert { type: 'json' } ;
 import jobsJson from "@/data/jobs.json" assert { type: 'json' } ;
 import specialJson from "@/data/special.json" assert { type: 'json' } ;
-import { Piece } from "@/types/types";
+import { Piece } from '@/types/types';
 
 const global = {
   GAIN_LEVEL: 1.2,
@@ -211,7 +211,7 @@ export function findAllRequiredCombinations(options: {
   const currentCount =
     jobCount.find((job) => job.id === requiredJob.id)?.count ?? 0;
 
-  const availableChampions = jobChampionMap.get(requiredJob.id)?.filter((championId) => !initCombination.includes(championId)) ?? [];
+  const availableChampions = jobChampionMap.get(requiredJob.id)?.filter((champion) => !initCombination.find((piece) => piece.id === champion)) ?? [];
 
   const diff = requiredJob.count - currentCount;
 

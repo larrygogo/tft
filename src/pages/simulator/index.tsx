@@ -12,8 +12,7 @@ import JobSelect from "@/components/JobSelect";
 import JobIcon from "@/components/JobIcon";
 import { evaluateCombination, findMoreActiveJobCombination, getActiveJobs, getJobCount, jobs, specialMap } from "@/lib/find";
 import { toast } from "sonner";
-import {  } from "@radix-ui/react-alert-dialog";
-import { AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogOverlay, AlertDialogPortal, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import { AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogPortal, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 
 const target = specialMap.get("80001") as Piece;
 const golem = specialMap.get("90001") as Piece;
