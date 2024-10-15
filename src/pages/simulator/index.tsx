@@ -67,7 +67,7 @@ const SimulatorPage = () => {
 
   const handleCalculate = () => {
     const championCount = selectedChampion.filter((champion) => champion.type === "champion").length;
-    if (count - championCount > 4) {
+    if (count - championCount > 5) {
       toast.error("目标人口数过大，无法计算");
       return;
     }
@@ -345,7 +345,6 @@ const SimulatorPage = () => {
                 {selectedJobCount.map((job) => {
                   const bonus = jobs.get(job.id)!.bonus;
                   const active = selectedActiveJob.find((j) => j.id === job.id);
-                  console.log(active);
                   const activeColor = getActiveColor(bonus, active?.level ?? 0);
                   return (
                     <div
@@ -459,7 +458,6 @@ export default SimulatorPage;
 
 
 function getActiveColor(bonus: number[], level: number) {
-  console.log(bonus, level)
   if (bonus.length === 1) {
     return {
       bgFill: "#de5b1a",

@@ -112,7 +112,7 @@ export function getJobCount(
     id,
     name: jobs.get(id)!.name,
     count: value.count,
-  }));
+  })).sort((a, b) => b.count - a.count);
 }
 
 // 计算组合中每个职业的激活状态
@@ -164,7 +164,12 @@ export function getActiveJobs(
     id,
     level,
     count: jobCounts.get(id) ?? 0,
-  }));
+  })).sort((a, b) => {
+    if(a.level === b.level) {
+      return b.count - a.count;
+    }
+    return b.level - a.level;
+  });
 }
 
 export function getActiveJobCount(
@@ -362,7 +367,12 @@ export function findMoreActiveJobCombination(options: {
     }
   }
 
-  return maxJobCombination.map((id) => pieces.get(id) ?? initSelected.get(id)!);
+  return maxJobCombination.map((id) => pieces.get(id) ?? initSelected.get(id)!).sort((a, b) => {
+    if(a.type === 'champion' && b.type === 'champion') {
+      return parseInt(a.price) - parseInt(b.price);
+    }
+    return a.type === 'champion' ? -1 : 1;
+  });
 }
 
 
